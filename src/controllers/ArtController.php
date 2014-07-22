@@ -18,8 +18,6 @@ class ArtController extends BaseController {
     {
         $featuredArts = $this->artService
             ->retrieveFeaturedArts();
-echo '<pre>';
-dd($featuredArts);
 
         return View::make('art::index')
             ->with('featuredArts', $featuredArts);
