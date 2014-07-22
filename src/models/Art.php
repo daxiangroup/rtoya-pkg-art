@@ -9,6 +9,11 @@ class Art extends Eloquent {
         return $this->hasMany('ArtPhoto');
     }
 
+    public function user()
+    {
+        return $this->hasOne('User', 'id', 'user_id');
+    }
+
     public function primaryPhoto()
     {
         // $this-
