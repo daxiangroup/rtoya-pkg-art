@@ -15,7 +15,7 @@
 
     <div class="columns small-12 medium-9">
         @foreach ($featuredArts as $featuredArt)
-        Name: {{ $featuredArt->name }}<br>
+        Name: {{ HTML::linkRoute('art.byId', $featuredArt->name, array($featuredArt->user->name, $featuredArt->id)) }}<br>
         @endforeach
     </div>
 </div>
