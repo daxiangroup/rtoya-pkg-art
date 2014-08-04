@@ -14,8 +14,8 @@ class Art extends Eloquent {
         return $this->hasOne('User', 'id', 'user_id');
     }
 
-    public function primaryPhoto()
+    public function galleries()
     {
-        // $this-
+        return $this->belongsToMany('Gallery', 'arts_gallery_art');
     }
 }

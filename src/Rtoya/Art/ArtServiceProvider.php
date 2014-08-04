@@ -41,6 +41,14 @@ class ArtServiceProvider extends ServiceProvider {
         {
             return new ArtService;
         });
+        $this->app->bind('Gallery', function()
+        {
+            return new Gallery;
+        });
+        $this->app->bind('GalleryArt', function()
+        {
+            return new GalleryArt;
+        });
     }
 
     /**

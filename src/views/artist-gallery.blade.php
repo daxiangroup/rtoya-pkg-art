@@ -4,7 +4,7 @@
 
 <div class="row">
     <div class="small-12">
-        <h2>{{ Lang::get('art::labels.art') }} - {{ Lang::get('art::labels.art.featured-arts') }}</h2>
+        <h2>{{ Lang::get('art::labels.artist-gallery') }} - {{ $gallery->name }}</h2>
     </div>
 </div>
 
@@ -14,8 +14,13 @@
     </div>
 
     <div class="columns small-12 medium-9">
-        @foreach ($featuredArts as $featuredArt)
-        Name: {{ HTML::linkRoute('art.byId', $featuredArt->name, array($featuredArt->user->name, $featuredArt->id)) }}<br>
+        @foreach ($gallery->arts as $art)
+            {{
+            HTML::linkRoute('art.artById', $art->name, array(
+                $art->id,
+                $art->name_slug
+            ))
+            }}<br>
         @endforeach
     </div>
 </div>
